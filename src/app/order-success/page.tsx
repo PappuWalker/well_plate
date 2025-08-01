@@ -22,11 +22,11 @@ const OrderSuccessPage = () => {
       }
 
       const particleCount = 50 * (timeLeft / duration);
-      // @ts-expect-error
+      // @ts-expect-error: Confetti is loaded from a script
       if (typeof confetti === 'function') {
-        // @ts-expect-error
+        // @ts-expect-error: Confetti is loaded from a script
         confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-        // @ts-expect-error
+        // @ts-expect-error: Confetti is loaded from a script
         confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
       }
     }, 250);
