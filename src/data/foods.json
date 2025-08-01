@@ -1,0 +1,23 @@
+{
+  "High BP": ["Boiled Vegetables", "Oats", "Low-Sodium Soup", "Berries", "Garlic", "Leafy Greens", "Bananas"],
+  "Low BP": ["Salted Crackers", "Pickles", "Soup with Salt", "Fried Fish", "Coffee", "Cheese", "Bread"],
+  "Diabetes": ["Brown Rice", "Grilled Chicken", "Steamed Broccoli", "Almonds", "Salmon", "Spinach", "Lentils"],
+  "Thyroid": ["Boiled Eggs", "Leafy Greens", "Berries", "Salmon", "Yogurt", "Sweet Potatoes", "Oats"],
+  "Fever": ["Chicken Soup", "Boiled Rice", "Fruit Juice", "Herbal Tea", "Rice Porridge", "Ginger Tea", "Hot Broth"],
+  "Cold": ["Ginger Tea", "Warm Broth", "Citrus Fruits", "Honey", "Garlic", "Onions", "Ginger Lemon Tea"],
+  "Cough": ["Honey Tea", "Turmeric Milk", "Steamed Veggies", "Ginger", "Pineapple", "Lemon Water", "Peppermint Tea"],
+  "Migraine": ["Spinach", "Sweet Potatoes", "Watermelon", "Bananas", "Dark Chocolate", "Cucumber", "Almonds"],
+  "Heart Disease": ["Oatmeal", "Salmon", "Avocado", "Nuts", "Olive Oil", "Chia Seeds", "Leafy Greens"],
+  "Obesity": ["Salad", "Grilled Veggies", "Lentil Soup", "Cucumber", "Apple", "Broccoli", "Chicken Breast"],
+  "Anemia": ["Spinach", "Red Meat", "Beetroot", "Lentils", "Chickpeas", "Eggs", "Tofu"],
+  "Asthma": ["Apples", "Carrots", "Ginger", "Salmon", "Broccoli", "Spinach", "Pineapple"],
+  "Acidity": ["Bananas", "Oatmeal", "Aloe Vera Juice", "Coconut Water", "Papaya", "Green Tea", "Rice Pudding"],
+  "Constipation": ["Papaya", "Yogurt", "Whole Grains", "Apples", "Prunes", "Oats", "Beans"],
+  "Arthritis": ["Fatty Fish", "Berries", "Broccoli", "Turmeric", "Olive Oil", "Green Tea", "Ginger"],
+  "Skin Allergy": ["Cucumber", "Aloe Juice", "Turmeric Milk", "Leafy Greens", "Tomatoes", "Papaya", "Carrots"],
+  "Kidney Stones": ["Coconut Water", "Basil Juice", "Lemon Water", "Watermelon", "Celery", "Apples", "Ginger Tea"],
+  "Depression": ["Dark Chocolate", "Walnuts", "Green Tea", "Bananas", "Oats", "Chia Seeds", "Blueberries"],
+  "Eye Problems": ["Carrots", "Sweet Corn", "Spinach", "Eggs", "Liver", "Berries", "Tomatoes"],
+  "Pregnancy": ["Folic Acid-rich Foods", "Milk", "Fruits", "Leafy Greens", "Eggs", "Chicken", "Yogurt"],
+  "Gastritis": ["Bananas", "Rice", "Boiled Potatoes", "Oatmeal", "Carrots", "Applesauce", "Herbal Tea"]
+}
