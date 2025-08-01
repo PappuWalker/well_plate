@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Script from 'next/script';
 
@@ -22,11 +22,11 @@ const OrderSuccessPage = () => {
       }
 
       const particleCount = 50 * (timeLeft / duration);
-      // @ts-ignore
+      // @ts-expect-error
       if (typeof confetti === 'function') {
-        // @ts-ignore
+        // @ts-expect-error
         confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-        // @ts-ignore
+        // @ts-expect-error
         confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
       }
     }, 250);
