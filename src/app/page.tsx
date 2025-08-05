@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import HighlightedProducts from '@/components/HighlightedProducts';
 import Reviews from '@/components/Reviews';
+import './order-now-btn.css';
+
 
 export default function HomePage() {
   return (
@@ -12,8 +14,8 @@ export default function HomePage() {
           <Image
             src="/mobile_hero.png"
             alt="Healthy food"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             quality={100}
           />
         </div>
@@ -21,8 +23,8 @@ export default function HomePage() {
           <Image
             src="/desktop hero.png"
             alt="Healthy food"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             quality={100}
           />
         </div>
@@ -33,9 +35,11 @@ export default function HomePage() {
           <p className="text-md sm:text-lg md:text-2xl mb-4 sm:mb-6">
             Claim it right now!!
           </p>
-          <Link href="/search" className="bg-green-500 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-green-600 font-bold">
-            Order Now
-          </Link>
+          <Link href="/search" legacyBehavior>
+  <button type="button" className="order-now-btn">
+    <span>Order Now</span>
+  </button>
+</Link>
         </div>
       </section>
 
