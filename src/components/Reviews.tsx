@@ -22,7 +22,7 @@ const Reviews = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <h2 className="text-4xl font-extrabold text-center text-white mb-16 drop-shadow-lg">What Our Customers Say</h2>
         <div className="flex flex-wrap justify-center gap-10">
-          {reviews.map((review, idx) => (
+          {reviews.map((review) => (
             <div key={review.id} className="group relative w-[380px]">
               <div className="relative overflow-hidden rounded-2xl bg-slate-950 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-indigo-500/10">
                 <div className="absolute -left-16 -top-16 h-32 w-32 rounded-full bg-gradient-to-br from-indigo-500/20 to-purple-500/0 blur-2xl transition-all duration-500 group-hover:scale-150 group-hover:opacity-70"></div>

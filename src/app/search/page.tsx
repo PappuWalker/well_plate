@@ -5,7 +5,7 @@ import ConditionSelector from '@/components/ConditionSelector';
 import FoodList from '@/components/FoodList';
 import Link from "next/link";
 import Logo from "@/components/Logo";
-import { ShoppingCart, ShoppingBag } from 'lucide-react';
+import { } from 'lucide-react';
 
 export default function SearchPage() {
   const [selectedCondition, setSelectedCondition] = useState('');
@@ -22,7 +22,7 @@ export default function SearchPage() {
           <Logo className="h-24 w-24" />
         </span>
         <h1 className="text-4xl md:text-5xl font-extrabold text-white text-center mb-2 drop-shadow">Find Foods for Your Condition</h1>
-        <p className="text-lg md:text-xl text-gray-300 text-center max-w-xl mb-6">Personalized, doctor-reviewed food recommendations for your unique health needs. Discover what you can eat, not just what you can't!</p>
+        <p className="text-lg md:text-xl text-gray-300 text-center max-w-xl mb-6">Personalized, doctor-reviewed food recommendations for your unique health needs. Discover what you can eat, not just what you can&apos;t!</p>
         <a href="/searc" className="inline-block rounded-full bg-gradient-to-r from-teal-400 to-indigo-500 text-white px-8 py-3 font-semibold shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-indigo-400 animate-glow">Get Started</a>
       </section>
 
