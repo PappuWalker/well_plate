@@ -5,6 +5,7 @@ import ConditionSelector from '@/components/ConditionSelector';
 import FoodList from '@/components/FoodList';
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import { ShoppingCart, ShoppingBag } from 'lucide-react';
 
 export default function SearchPage() {
   const [selectedCondition, setSelectedCondition] = useState('');
@@ -50,6 +51,13 @@ export default function SearchPage() {
         <h2 className="text-2xl font-bold text-white text-center mb-6">Select Your Health Condition</h2>
         <ConditionSelector onConditionChange={setSelectedCondition} />
         <FoodList condition={selectedCondition} />
+        <div className="mt-8 text-center">
+          <Link href="/cart">
+            <button className="bg-gradient-to-r from-teal-400 to-indigo-500 text-white px-8 py-3 font-semibold rounded-full shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-indigo-400">
+              View Cart
+            </button>
+          </Link>
+        </div>
       </section>
     </main>
   );

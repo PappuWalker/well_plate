@@ -35,11 +35,11 @@ export default function HomePage() {
           <p className="text-md sm:text-lg md:text-2xl mb-4 sm:mb-6">
             Claim it right now!!
           </p>
-          <Link href="/search" legacyBehavior>
-  <button type="button" className="order-now-btn">
-    <span>Order Now</span>
-  </button>
-</Link>
+          <Link href="/search">
+            <button type="button" className="order-now-btn">
+              <span>Order Now</span>
+            </button>
+          </Link>
         </div>
       </section>
 

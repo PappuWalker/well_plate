@@ -43,8 +43,8 @@ export function AnimeNavBar({ items, className, defaultActive = "Home" }: NavBar
   if (!mounted) return null
 
   return (
-    <div className="fixed top-5 left-0 right-0 z-[9999]">
-      <div className="flex justify-center pt-6">
+    <div className="fixed top-0 left-0 right-0 z-[9999]">
+      <div className="flex justify-center">
         <motion.div 
           className="flex items-center gap-3 bg-black/50 border border-white/10 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg relative"
           initial={{ y: -20, opacity: 0 }}
@@ -73,7 +73,8 @@ export function AnimeNavBar({ items, className, defaultActive = "Home" }: NavBar
                   isActive && "text-white"
                 )}
               >
-                {isActive && (
+                <div>
+                  {isActive && (
                   <motion.div
                     className="absolute inset-0 rounded-full -z-10 overflow-hidden"
                     initial={{ opacity: 0 }}
@@ -100,23 +101,14 @@ export function AnimeNavBar({ items, className, defaultActive = "Home" }: NavBar
                     />
                   </motion.div>
                 )}
-
                 <motion.span
-                  className="hidden md:inline relative z-10"
+                  className="relative z-10"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
                 >
-                  {item.name}
+                  {isMobile ? (Icon ? <Icon size={18} strokeWidth={2.5} /> : item.name) : item.name}
                 </motion.span>
-                <motion.span 
-                  className="md:hidden relative z-10"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {Icon && <Icon size={18} strokeWidth={2.5} />}
-                </motion.span>
-          
                 <AnimatePresence>
                   {isHovered && !isActive && (
                     <motion.div
@@ -127,7 +119,6 @@ export function AnimeNavBar({ items, className, defaultActive = "Home" }: NavBar
                     />
                   )}
                 </AnimatePresence>
-
                 {isActive && (
                   <motion.div
                     layoutId="anime-mascot"
@@ -264,11 +255,12 @@ export function AnimeNavBar({ items, className, defaultActive = "Home" }: NavBar
                     </div>
                   </motion.div>
                 )}
+                </div>
               </Link>
-            )
+            );
           })}
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
