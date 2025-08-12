@@ -3,12 +3,15 @@
 import React, { useState } from 'react';
 import ConditionSelector from '@/components/ConditionSelector';
 import FoodList from '@/components/FoodList';
+import DiseaseList from '@/components/DiseaseList';
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import { } from 'lucide-react';
 
 export default function SearchPage() {
   const [selectedCondition, setSelectedCondition] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchType, setSearchType] = useState('disease'); // 'food' or 'disease'
 
   return (
     <main className="relative min-h-screen bg-gradient-to-b from-[#10151B] via-[#151E26] to-[#10151B] pb-16">
@@ -49,8 +52,31 @@ export default function SearchPage() {
       {/* Condition Selector & Food List */}
       <section className="max-w-2xl mx-auto bg-slate-900/60 rounded-2xl p-8 shadow-lg border border-slate-800">
         <h2 className="text-2xl font-bold text-white text-center mb-6">Select Your Health Condition</h2>
-        <ConditionSelector onConditionChange={setSelectedCondition} />
-        <FoodList condition={selectedCondition} />
+        <div className="flex justify-center">
+          <ConditionSelector
+            onConditionChange={setSelectedCondition}
+            onSearchChange={setSearchTerm}
+            searchTerm={searchTerm}
+            searchType={searchType}
+            onSearchTypeChange={setSearchType}
+            selectedCondition={selectedCondition}
+          />
+        </div>
+        {searchType === 'food' ? (
+          <FoodList
+            condition={selectedCondition}
+            searchTerm={searchTerm}
+          />
+        ) : (
+          <DiseaseList
+            searchTerm={searchTerm}
+            onDiseaseSelect={(disease) => {
+              setSelectedCondition(disease);
+              setSearchType('food');
+              setSearchTerm('');
+            }}
+          />
+        )}
         <div className="mt-8 text-center">
           <Link href="/cart">
             <button className="bg-gradient-to-r from-teal-400 to-indigo-500 text-white px-8 py-3 font-semibold rounded-full shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-indigo-400">

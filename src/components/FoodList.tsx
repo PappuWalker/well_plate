@@ -6,20 +6,29 @@ import { useCart } from '@/context/CartContext';
 
 interface FoodListProps {
   condition: string;
+  searchTerm: string;
 }
 
 // A type assertion to tell TypeScript that `condition` can be a key of `foodData`
 type FoodData = typeof foodData;
 
-const FoodList: React.FC<FoodListProps> = ({ condition }) => {
+const FoodList: React.FC<FoodListProps> = ({ condition, searchTerm }) => {
   const { addToCart } = useCart();
   const [added, setAdded] = useState<string[]>([]);
 
-  if (!condition) {
+  const foods = condition
+    ? (foodData[condition as keyof FoodData] || []).filter(food =>
+        food.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : Object.values(foodData)
+        .flat()
+        .filter(food => food.toLowerCase().includes(searchTerm.toLowerCase()));
+
+  if (!condition && searchTerm) {
+    // Render search results even if no condition is selected
+  } else if (!condition) {
     return <p className="text-center mt-4">Please select a condition to see food recommendations.</p>;
   }
-
-  const foods = foodData[condition as keyof FoodData] || [];
 
   const handleAddToCart = (food: string) => {
     addToCart({ name: food, quantity: 1 });
@@ -29,7 +38,7 @@ const FoodList: React.FC<FoodListProps> = ({ condition }) => {
   return (
     <div className="mt-8 w-full max-w-md mx-auto">
       <h2 className="text-2xl font-semibold text-center mb-4">
-        Recommended Foods for {condition}
+        {condition ? `Recommended Foods for ${condition}` : 'Search Results'}
       </h2>
       <ul className="space-y-2">
         {foods.map((food) => (
