@@ -11,7 +11,7 @@ import { } from 'lucide-react';
 export default function SearchPage() {
   const [selectedCondition, setSelectedCondition] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchType, setSearchType] = useState('disease'); // 'food' or 'disease'
+  const [searchType, setSearchType] = useState('disease'); // 'disease' or 'food'
 
   return (
     <main className="relative min-h-screen bg-gradient-to-b from-[#10151B] via-[#151E26] to-[#10151B] pb-16">
@@ -62,19 +62,19 @@ export default function SearchPage() {
             selectedCondition={selectedCondition}
           />
         </div>
-        {searchType === 'food' ? (
-          <FoodList
-            condition={selectedCondition}
-            searchTerm={searchTerm}
-          />
-        ) : (
+        {searchType === 'disease' ? (
           <DiseaseList
             searchTerm={searchTerm}
             onDiseaseSelect={(disease) => {
               setSelectedCondition(disease);
-              setSearchType('food');
+              setSearchType('food'); // Switch to food search after disease selection
               setSearchTerm('');
             }}
+          />
+        ) : (
+          <FoodList
+            condition={selectedCondition}
+            searchTerm={searchTerm}
           />
         )}
         <div className="mt-8 text-center">

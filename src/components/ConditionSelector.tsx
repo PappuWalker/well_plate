@@ -59,27 +59,15 @@ const ConditionSelector: React.FC<ConditionSelectorProps> = ({
           type="text"
           placeholder="Search..."
           value={searchTerm}
-          onChange={(e) => onSearchChange(e.target.value)}
+          onChange={(e) => {
+            onSearchChange(e.target.value);
+            if (searchType === 'food') { // If currently showing food list, switch back to disease search
+              onSearchTypeChange('disease');
+              onConditionChange(''); // Clear selected condition
+            }
+          }}
           className="p-2 border rounded-md w-full bg-gray-800 text-white"
         />
-      </div>
-      <div className="flex items-center mt-2">
-        <button
-          onClick={() => onSearchTypeChange('food')}
-          className={`px-3 py-1 rounded-l-md text-sm ${
-            searchType === 'food' ? 'bg-blue-500 text-white' : 'bg-gray-700'
-          }`}
-        >
-          Food
-        </button>
-        <button
-          onClick={() => onSearchTypeChange('disease')}
-          className={`px-3 py-1 rounded-r-md text-sm ${
-            searchType === 'disease' ? 'bg-blue-500 text-white' : 'bg-gray-700'
-          }`}
-        >
-          Disease
-        </button>
       </div>
     </div>
   );
